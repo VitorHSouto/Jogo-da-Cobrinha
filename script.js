@@ -83,7 +83,13 @@ function startGame() {
             break;
     }
 
-    snake.pop();
+    if (snakeX == food.x && snakeY == food.y) {
+        food = {
+            x: Math.floor(Math.random() * 15 + 1) * box,
+            y: Math.floor(Math.random() * 15 + 1) * box,
+        }
+    } else
+        snake.pop();
 
     let newHead = {
         x: snakeX,
